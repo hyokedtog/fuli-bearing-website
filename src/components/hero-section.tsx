@@ -33,14 +33,14 @@ export default function HeroSection() {
         <div className="max-w-3xl">
 
           {/* 主标题 */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-tighter leading-[0.95] mb-6">
+          <h1 className="font-display text-6xl md:text-8xl lg:text-[108px] font-extrabold text-white tracking-tight leading-[0.92] mb-6">
             Precision<br />
             Bearings<br />
             <span className="text-white/90">for Industry</span>
           </h1>
 
           {/* 副标题 */}
-          <p className="text-sm md:text-base text-white/60 font-light tracking-wide mb-8 max-w-lg">
+          <p className="text-base md:text-xl text-white/60 font-light tracking-wide mb-8 max-w-lg">
             <span className="text-orange-500 font-medium">Deep Groove Ball</span>
             {' · '}
             <span className="text-white/80">Tapered Roller</span>
@@ -51,7 +51,7 @@ export default function HeroSection() {
           </p>
 
           {/* 理念文案 */}
-          <p className="text-xs md:text-sm text-white/40 font-light leading-relaxed max-w-md mb-10">
+          <p className="text-sm md:text-base text-white/50 font-light leading-relaxed max-w-md mb-10">
             {t('hero.description')}
           </p>
 
@@ -59,14 +59,14 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               href={`/${locale}/products`}
-              className="group inline-flex items-center justify-center px-6 py-3 bg-orange-600 hover:bg-orange-500 text-white text-sm font-semibold rounded-sm transition-all duration-300 shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:shadow-[0_0_30px_rgba(234,88,12,0.5)]"
+              className="group inline-flex items-center justify-center px-7 py-3.5 bg-orange-600 hover:bg-orange-500 text-white text-base font-semibold rounded-sm transition-all duration-300 shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:shadow-[0_0_30px_rgba(234,88,12,0.5)]"
             >
               {t('hero.ctaPrimary')}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               href={`/${locale}/contact`}
-              className="inline-flex items-center justify-center px-6 py-3 bg-transparent border border-white/30 hover:border-white/60 hover:bg-white/5 text-white text-sm font-medium rounded-sm transition-all duration-300"
+              className="inline-flex items-center justify-center px-7 py-3.5 bg-transparent border border-white/30 hover:border-white/60 hover:bg-white/5 text-white text-base font-medium rounded-sm transition-all duration-300"
             >
               {t('hero.ctaSecondary')}
             </Link>
@@ -76,7 +76,7 @@ export default function HeroSection() {
 
       {/* 右下角：向下滚动提示 */}
       <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 z-20">
-        <div className="flex flex-col items-center gap-2 text-white/30 text-[10px] tracking-widest uppercase">
+        <div className="flex flex-col items-center gap-2 text-white/30 text-xs tracking-widest uppercase">
           <span>Scroll</span>
           <div className="w-px h-8 bg-white/20 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-3 bg-white/60 animate-bounce" />

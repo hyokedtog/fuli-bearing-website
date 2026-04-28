@@ -6,6 +6,21 @@ import { cn } from '@/lib/utils';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import '../globals.css';
+import { Barlow, Barlow_Condensed } from 'next/font/google';
+
+const barlow = Barlow({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const barlowCondensed = Barlow_Condensed({
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+  variable: '--font-display',
+  display: 'swap',
+});
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -26,8 +41,8 @@ export default async function LocaleLayout({
   const isRTL = locale === 'ar';
 
   return (
-    <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'}>
-      <body className={cn('min-h-screen bg-background font-sans antialiased')}>
+    <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'} className={cn(barlow.variable, barlowCondensed.variable)}>
+      <body className={cn('min-h-screen bg-slate-950 font-sans antialiased')}>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <Navbar />
           <main>{children}</main>

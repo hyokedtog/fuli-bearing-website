@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 const TO_EMAILS = ['fuxuepu@gmail.com'];
 
@@ -11,6 +17,9 @@ export async function POST(req: NextRequest) {
   if (!name || !email) {
     return NextResponse.json({ error: 'Name and email are required.' }, { status: 400 });
   }
+
+  // 存到 Supabase
+  await supabase.from('inquiries').insert({ name, email, company, phone, product, quantity, message });
 
   const subject = `[Bearing Inquiry] ${company ? company + ' — ' : ''}${name}`;
 

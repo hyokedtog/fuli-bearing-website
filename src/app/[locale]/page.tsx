@@ -146,11 +146,11 @@ export default function HomePage() {
           <div className="mb-14">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-orange-500" />
-              <p className="text-[11px] font-semibold tracking-[0.22em] text-orange-500 uppercase">
+              <p className="text-xs font-semibold tracking-[0.22em] text-orange-500 uppercase">
                 Product Catalog
               </p>
             </div>
-            <h2 className="text-4xl font-bold text-white tracking-tight">
+            <h2 className="font-display text-4xl font-bold text-white tracking-tight">
               {t('categories.title')}
             </h2>
             <p className="mt-3 text-base text-slate-400 max-w-xl">
@@ -181,17 +181,17 @@ export default function HomePage() {
                       </div>
 
                       {/* Product code */}
-                      <p className="text-[10px] font-mono font-semibold text-slate-600 tracking-[0.18em] mb-1.5 uppercase">
+                      <p className="text-xs font-mono font-semibold text-slate-500 tracking-[0.18em] mb-1.5 uppercase">
                         {cat.code} Series
                       </p>
 
                       {/* Title */}
-                      <h3 className="text-base font-bold text-white leading-snug mb-3 tracking-tight">
+                      <h3 className="text-lg font-bold text-white leading-snug mb-3 tracking-tight">
                         {t(`categories.${cat.key}.title`)}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-sm text-slate-500 leading-relaxed mb-5">
+                      <p className="text-sm text-slate-400 leading-relaxed mb-5">
                         {t(`categories.${cat.key}.description`)}
                       </p>
 
@@ -200,7 +200,7 @@ export default function HomePage() {
                         {cat.specs.map((spec) => (
                           <span
                             key={spec}
-                            className="text-[10px] font-medium text-slate-600 border border-slate-800 px-2 py-0.5 tracking-wide"
+                            className="text-xs font-medium text-slate-500 border border-slate-700 px-2.5 py-1 tracking-wide"
                           >
                             {spec}
                           </span>
@@ -210,10 +210,10 @@ export default function HomePage() {
 
                     {/* Bottom CTA bar */}
                     <div className="border-t border-slate-800 group-hover:border-orange-500/25 px-6 py-3.5 flex items-center justify-between transition-colors duration-300">
-                      <span className="text-[11px] font-semibold text-slate-600 group-hover:text-orange-500 transition-colors tracking-[0.12em] uppercase">
+                      <span className="text-xs font-semibold text-slate-500 group-hover:text-orange-500 transition-colors tracking-[0.12em] uppercase">
                         Explore Series
                       </span>
-                      <ArrowRight className="h-3.5 w-3.5 text-slate-600 group-hover:text-orange-500 transition-all duration-300 group-hover:translate-x-0.5" />
+                      <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-orange-500 transition-all duration-300 group-hover:translate-x-0.5" />
                     </div>
                   </div>
                 </Link>
@@ -243,15 +243,15 @@ export default function HomePage() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-px bg-slate-600" />
-                <p className="text-[11px] font-semibold tracking-[0.22em] text-slate-500 uppercase">
+                <p className="text-xs font-semibold tracking-[0.22em] text-slate-400 uppercase">
                   Manufacturer Advantage
                 </p>
               </div>
-              <h2 className="text-4xl font-bold text-white tracking-tight">
+              <h2 className="font-display text-4xl font-bold text-white tracking-tight">
                 {t('features.title')}
               </h2>
             </div>
-            <p className="text-sm text-slate-500 max-w-xs lg:text-right leading-relaxed shrink-0">
+            <p className="text-base text-slate-400 max-w-xs lg:text-right leading-relaxed shrink-0">
               Factory-direct supply with full export documentation and dedicated international support.
             </p>
           </div>
@@ -272,17 +272,17 @@ export default function HomePage() {
 
                   {/* Text */}
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-sm font-bold text-white uppercase tracking-[0.08em] mb-1">
+                    <h3 className="text-base font-bold text-white uppercase tracking-[0.08em] mb-1.5">
                       {t(`features.${feat.key}.title`)}
                     </h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">
+                    <p className="text-sm text-slate-400 leading-relaxed">
                       {t(`features.${feat.key}.description`)}
                     </p>
                   </div>
 
                   {/* Credential badge */}
                   <div className="shrink-0 hidden sm:block">
-                    <span className="text-[10px] font-mono font-semibold text-slate-500 group-hover:text-slate-400 border border-slate-800 group-hover:border-slate-700 px-3 py-1.5 tracking-[0.1em] uppercase whitespace-nowrap transition-colors duration-300">
+                    <span className="text-xs font-mono font-semibold text-slate-400 group-hover:text-slate-300 border border-slate-700 group-hover:border-slate-600 px-3 py-1.5 tracking-[0.1em] uppercase whitespace-nowrap transition-colors duration-300">
                       {feat.badge}
                     </span>
                   </div>
@@ -302,14 +302,14 @@ export default function HomePage() {
           <div className="mb-14">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-slate-600" />
-              <p className="text-[11px] font-semibold tracking-[0.22em] text-slate-500 uppercase">
+              <p className="text-xs font-semibold tracking-[0.22em] text-slate-400 uppercase">
                 Industries Served
               </p>
             </div>
-            <h2 className="text-4xl font-bold text-white tracking-tight">
+            <h2 className="font-display text-4xl font-bold text-white tracking-tight">
               {t('applications.title')}
             </h2>
-            <p className="mt-3 text-sm text-slate-500 max-w-lg leading-relaxed">
+            <p className="mt-3 text-base text-slate-400 max-w-lg leading-relaxed">
               {t('applications.subtitle')}
             </p>
           </div>
@@ -328,7 +328,7 @@ export default function HomePage() {
                     <div className="flex h-11 w-11 items-center justify-center border border-slate-800 group-hover:border-slate-700 bg-slate-950 transition-all duration-300 shrink-0">
                       <Icon className="h-5 w-5 text-slate-600 group-hover:text-orange-500 transition-colors duration-300" />
                     </div>
-                    <h3 className="text-sm font-bold text-white uppercase tracking-[0.1em]">
+                    <h3 className="text-base font-bold text-white uppercase tracking-[0.1em]">
                       {t(`applications.${app.key}`)}
                     </h3>
                   </div>
@@ -336,7 +336,7 @@ export default function HomePage() {
                   {/* Use cases */}
                   <div className="space-y-2 pl-[60px]">
                     {app.uses.map((use) => (
-                      <p key={use} className="flex items-center gap-2 text-xs text-slate-500">
+                      <p key={use} className="flex items-center gap-2 text-sm text-slate-400">
                         <span className="w-1 h-1 rounded-full bg-orange-500/50 shrink-0" />
                         {use}
                       </p>
@@ -366,10 +366,10 @@ export default function HomePage() {
             {/* Top accent line */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-orange-500/60" />
             <div className="relative z-10">
-              <p className="text-[11px] font-semibold tracking-[0.22em] text-orange-500 uppercase mb-5">
+              <p className="text-xs font-semibold tracking-[0.22em] text-orange-500 uppercase mb-5">
                 Get in Touch
               </p>
-              <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
                 {t('cta.title')}
               </h2>
               <p className="text-base text-slate-400 mb-10 max-w-xl mx-auto leading-relaxed">
@@ -377,7 +377,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-orange-600 hover:bg-orange-500 text-white text-sm font-semibold transition-all duration-300 shadow-[0_0_30px_rgba(234,88,12,0.2)] hover:shadow-[0_0_40px_rgba(234,88,12,0.4)]"
+                className="inline-flex items-center gap-2 px-9 py-4 bg-orange-600 hover:bg-orange-500 text-white text-base font-semibold transition-all duration-300 shadow-[0_0_30px_rgba(234,88,12,0.2)] hover:shadow-[0_0_40px_rgba(234,88,12,0.4)]"
               >
                 {t('cta.button')}
                 <ArrowRight className="h-4 w-4" />
