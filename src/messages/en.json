@@ -1,0 +1,133 @@
+{
+  "metadata": {
+    "title": "FULI Machinery - Professional Bearing Manufacturer",
+    "description": "FULI Machinery (Shandong) Limited Company - Manufacturer of Deep Groove Ball Bearings, Tapered Roller Bearings, Spherical Roller Bearings, and Pillow Block Bearings."
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About Us",
+    "contact": "Contact",
+    "inquiry": "Get Quote"
+  },
+  "hero": {
+    "title": "Precision Bearings for Industry",
+    "subtitle": "Deep Groove Ball · Tapered Roller · Spherical Roller · Pillow Block",
+    "description": "FULI Machinery manufactures high-quality bearings trusted by clients worldwide. ISO certified, competitive pricing, fast delivery.",
+    "ctaPrimary": "Explore Products",
+    "ctaSecondary": "Contact Us"
+  },
+  "categories": {
+    "title": "Our Products",
+    "subtitle": "Comprehensive bearing solutions for every application",
+    "deepGroove": {
+      "title": "Deep Groove Ball Bearings",
+      "description": "Versatile single-row bearings for high speeds and moderate loads. Standard and non-standard sizes available."
+    },
+    "taperedRoller": {
+      "title": "Tapered Roller Bearings",
+      "description": "Handle combined radial and axial loads with high precision. Metric and inch series."
+    },
+    "sphericalRoller": {
+      "title": "Spherical Roller Bearings",
+      "description": "Self-aligning design compensates for shaft deflection. Ideal for heavy radial loads."
+    },
+    "pillowBlock": {
+      "title": "Pillow Block Bearings",
+      "description": "Mounted bearing units with housing for easy installation. UCP, UCF, UCT, UCFC series."
+    },
+    "viewAll": "View All Products"
+  },
+  "features": {
+    "title": "Why Choose FULI",
+    "quality": {
+      "title": "Premium Quality",
+      "description": "ISO 9001 certified manufacturing with strict quality control at every stage."
+    },
+    "price": {
+      "title": "Competitive Pricing",
+      "description": "Factory-direct prices without middlemen. Volume discounts available."
+    },
+    "delivery": {
+      "title": "Fast Delivery",
+      "description": "Large inventory ready for immediate shipment. Custom orders in 15-30 days."
+    },
+    "custom": {
+      "title": "Custom Solutions",
+      "description": "OEM/ODM accepted. Special sizes, materials, and packaging upon request."
+    }
+  },
+  "applications": {
+    "title": "Applications",
+    "subtitle": "Our bearings serve diverse industries worldwide",
+    "automotive": "Automotive",
+    "agriculture": "Agriculture",
+    "mining": "Mining",
+    "machinery": "Machinery",
+    "electric": "Electric Motors",
+    "construction": "Construction"
+  },
+  "cta": {
+    "title": "Ready to Order?",
+    "description": "Send us your requirements and get a competitive quote within 24 hours.",
+    "button": "Request a Quote"
+  },
+  "footer": {
+    "company": "FULI Machinery",
+    "tagline": "Professional Bearing Manufacturer",
+    "products": "Products",
+    "companyLinks": "Company",
+    "contact": "Contact",
+    "phone": "Phone",
+    "mobile": "Mobile",
+    "email": "Email",
+    "address": "Address",
+    "addressValue": "Yandian Town, Liaocheng City, Shandong Province, China",
+    "copyright": "© {year} FULI Machinery (Shandong) Limited Company. All rights reserved."
+  },
+  "about": {
+    "title": "About FULI Machinery",
+    "intro": "FULI Machinery (Shandong) Limited Company is a professional bearing manufacturer with complete production lines and a strong R\u0026D team.",
+    "description": "We accept customers' special requirements for bearing structure and quality, and produce corresponding bearing products according to various customers' diversified demands. FULI brand focus on high-end products. With its stable quality, our bearings are sold well all over the world and are widely used in many applications, such as food machinery, agricultural machinery, mining machinery, automobiles, motorcycles and electric vehicles.",
+    "mission": "Our Mission",
+    "missionText": "To provide world-class bearing solutions that enable our customers' success through quality, innovation, and reliable service.",
+    "vision": "Our Vision",
+    "visionText": "To become a globally recognized bearing brand known for precision, durability, and customer satisfaction.",
+    "stats": {
+      "experience": "Years Experience",
+      "products": "Product Models",
+      "countries": "Countries Served",
+      "capacity": "Monthly Production"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch for inquiries, quotes, or partnership opportunities",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "company": "Company Name",
+      "phone": "Phone / WhatsApp",
+      "product": "Product Interest",
+      "quantity": "Estimated Quantity",
+      "message": "Your Message",
+      "submit": "Send Inquiry",
+      "success": "Thank you! We will contact you within 24 hours."
+    },
+    "info": {
+      "title": "Contact Information",
+      "whatsapp": "WhatsApp",
+      "wechat": "WeChat",
+      "workingHours": "Working Hours",
+      "workingHoursValue": "Monday - Saturday: 8:00 AM - 6:00 PM (GMT+8)"
+    }
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Browse our comprehensive range of bearings",
+    "all": "All Products",
+    "specs": "Specifications",
+    "inquiry": "Send Inquiry",
+    "download": "Download Catalogue"
+  }
+}
