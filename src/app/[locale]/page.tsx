@@ -169,7 +169,7 @@ export default function HomePage() {
       </section>
 
       {/* Features */}
-      <section className="py-24 bg-gray-50 border-t border-gray-100">
+      <section className="py-24 bg-white border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           {/* Section header */}
@@ -285,7 +285,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gray-50 border-t border-gray-100">
+      <section className="py-24 bg-white border-t border-gray-100">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="border border-gray-200 bg-white p-12 md:p-16 text-center relative overflow-hidden">
             {/* Top orange accent line */}
