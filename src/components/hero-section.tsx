@@ -1,85 +1,107 @@
 'use client';
 
-import { useTranslations, useLocale } from 'next-intl';
+import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import MuxPlayer from '@mux/mux-player-react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
+
+const TRUST_BADGES = [
+  'ISO 9001 Certified',
+  'Factory Direct Export',
+  'Ships to 30+ Countries',
+  'OEM / ODM Ready',
+];
 
 export default function HeroSection() {
-  const t = useTranslations();
   const locale = useLocale();
 
   return (
-    <section className="relative w-full min-h-screen flex items-end overflow-hidden">
+    <section className="relative w-full bg-white">
+      <div className="flex flex-col lg:flex-row" style={{ minHeight: 'calc(100vh - 72px)' }}>
 
-      {/* 底层：Mux 视频背景 */}
-      <div className="absolute inset-0 z-0 w-full h-full">
-        <MuxPlayer
-          playbackId="TJx5LIjkM501J00OYq7YSOJWqMPgQIGJORoohjfpUL8vc"
-          streamType="on-demand"
-          autoPlay="muted"
-          loop
-          muted
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          className="w-full h-full object-cover [&_media-control-bar]:hidden"
-        />
-      </div>
+        {/* ── Left: Content ── */}
+        <div className="flex flex-col justify-center px-8 py-20 lg:px-16 lg:py-24 lg:w-[56%]">
 
-      {/* 中层：环境光遮蔽 — 底部暗角渐变 */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent" />
+          {/* Pre-label */}
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-10 h-px bg-[#e85d04]" />
+            <span className="text-[11px] font-bold tracking-[0.25em] text-[#e85d04] uppercase">
+              Agricultural Bearing Specialist · Shandong, China
+            </span>
+          </div>
 
-      {/* 表层：文案与交互 — 左下角定位 */}
-      <div className="relative z-20 w-full px-6 pb-16 pt-32 md:px-16 md:pb-24">
-        <div className="max-w-3xl">
-
-          {/* 主标题 */}
-          <h1 className="font-display text-6xl md:text-8xl lg:text-[108px] font-extrabold text-white tracking-tight leading-[0.92] mb-6">
-            Precision<br />
-            Bearings<br />
-            <span className="text-white/90">for Industry</span>
+          {/* Main headline */}
+          <h1 className="font-display text-[52px] md:text-[64px] lg:text-[72px] font-extrabold text-[#0f1923] leading-[0.97] tracking-tight mb-7">
+            Reliable<br />
+            Agricultural<br />
+            <em className="not-italic text-[#e85d04]">Bearings</em><br />
+            for Global<br />
+            Machinery Brands
           </h1>
 
-          {/* 副标题 */}
-          <p className="text-base md:text-xl text-white/60 font-light tracking-wide mb-8 max-w-lg">
-            <span className="text-orange-500 font-medium">Deep Groove Ball</span>
-            {' · '}
-            <span className="text-white/80">Tapered Roller</span>
-            {' · '}
-            <span className="text-white/80">Spherical Roller</span>
-            {' · '}
-            <span className="text-white/80">Pillow Block</span>
+          {/* Subtitle */}
+          <p className="text-base md:text-lg text-gray-500 font-normal leading-relaxed max-w-lg mb-10">
+            Stable quality, practical solutions, and export-ready bearing support for
+            agricultural equipment, low-speed machinery, and replacement markets.
           </p>
 
-          {/* 理念文案 */}
-          <p className="text-sm md:text-base text-white/50 font-light leading-relaxed max-w-md mb-10">
-            {t('hero.description')}
-          </p>
-
-          {/* CTA 按钮组 */}
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Link
-              href={`/${locale}/products`}
-              className="group inline-flex items-center justify-center px-7 py-3.5 bg-orange-600 hover:bg-orange-500 text-white text-base font-semibold rounded-sm transition-all duration-300 shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:shadow-[0_0_30px_rgba(234,88,12,0.5)]"
-            >
-              {t('hero.ctaPrimary')}
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <Link
               href={`/${locale}/contact`}
-              className="inline-flex items-center justify-center px-7 py-3.5 bg-transparent border border-white/30 hover:border-white/60 hover:bg-white/5 text-white text-base font-medium rounded-sm transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-9 py-4 bg-[#e85d04] hover:bg-[#c94d00] text-white text-[15px] font-bold tracking-wide transition-colors duration-200"
             >
-              {t('hero.ctaSecondary')}
+              Request a Quote
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+            <Link
+              href={`/${locale}/products`}
+              className="inline-flex items-center justify-center gap-2 px-9 py-4 border-2 border-[#0f1923] text-[#0f1923] hover:bg-[#0f1923] hover:text-white text-[15px] font-semibold tracking-wide transition-colors duration-200"
+            >
+              View Bearing Solutions
             </Link>
           </div>
-        </div>
-      </div>
 
-      {/* 右下角：向下滚动提示 */}
-      <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 z-20">
-        <div className="flex flex-col items-center gap-2 text-white/30 text-xs tracking-widest uppercase">
-          <span>Scroll</span>
-          <div className="w-px h-8 bg-white/20 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-3 bg-white/60 animate-bounce" />
+          {/* Trust badges */}
+          <div className="flex flex-wrap gap-x-6 gap-y-3 pt-5 border-t border-gray-100">
+            {TRUST_BADGES.map((badge) => (
+              <div key={badge} className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[#e85d04] shrink-0" />
+                <span className="text-sm font-medium text-gray-500">{badge}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Right: Video panel ── */}
+        {/*
+          TO REPLACE VIDEO: change playbackId below to your agricultural machinery Mux video ID.
+          Or swap <MuxPlayer> with <img src="..." /> for a static photo.
+          Keep the absolute/inset-0 wrapper so the image/video fills the panel.
+        */}
+        <div className="relative lg:flex-1 min-h-[50vh] lg:min-h-full bg-gray-100 overflow-hidden">
+          <div className="absolute inset-0">
+            <MuxPlayer
+              playbackId="TJx5LIjkM501J00OYq7YSOJWqMPgQIGJORoohjfpUL8vc"
+              streamType="on-demand"
+              autoPlay="muted"
+              loop
+              muted
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              className="w-full h-full object-cover [&_media-control-bar]:hidden"
+            />
+          </div>
+
+          {/* Left fade to blend with white content panel */}
+          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent" />
+
+          {/* Bottom caption tag */}
+          <div className="absolute bottom-6 left-6">
+            <div className="inline-block bg-white/90 backdrop-blur-sm px-4 py-2 border-l-2 border-[#e85d04]">
+              <p className="text-[11px] font-bold text-gray-600 uppercase tracking-[0.2em]">
+                Tractors · Harvesters · Tillage Equipment
+              </p>
+            </div>
           </div>
         </div>
       </div>

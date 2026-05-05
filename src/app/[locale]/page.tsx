@@ -44,10 +44,7 @@ import {
   Cog,
   Zap,
   Building2,
-  CircleDot,
   Gauge,
-  Globe,
-  Layers,
   PackageCheck,
   Wheat,
   Car,
@@ -56,38 +53,26 @@ import {
 export default function HomePage() {
   const t = useTranslations();
 
-  const categories = [
+  const valueProps = [
     {
-      key: 'deepGroove',
-      icon: CircleDot,
-      code: 'DGB',
-      num: '01',
-      specs: ['Single-row', 'High speed', 'Radial loads'],
-      href: '/products#deep-groove',
+      icon: Wheat,
+      title: 'Agricultural Equipment Bearings',
+      desc: 'Disc harrow, insert, pillow block, and flanged units built for tractors, seeders, and harvesting machines.',
     },
     {
-      key: 'taperedRoller',
       icon: Gauge,
-      code: 'TRB',
-      num: '02',
-      specs: ['Radial + axial', 'High precision', 'Metric & inch'],
-      href: '/products#tapered-roller',
+      title: 'Stable Quality for Low-Speed Applications',
+      desc: 'Consistent dimensional tolerance and grease retention for field-facing, low-RPM bearing positions.',
     },
     {
-      key: 'sphericalRoller',
-      icon: Globe,
-      code: 'SRB',
-      num: '03',
-      specs: ['Self-aligning', 'Heavy radial', 'Shaft deflection'],
-      href: '/products#spherical-roller',
+      icon: PackageCheck,
+      title: 'Export Packing & Custom Support',
+      desc: 'Neutral packing, branded boxes, or bulk export cartons. OEM marking and documentation available.',
     },
     {
-      key: 'pillowBlock',
-      icon: Layers,
-      code: 'PBU',
-      num: '04',
-      specs: ['Mounted unit', 'UCP / UCF / UCT', 'Easy install'],
-      href: '/products#pillow-block',
+      icon: ShieldCheck,
+      title: 'Practical Solutions, Not Just Cheap Prices',
+      desc: 'Mid-range quality that performs reliably — a better choice than ultra-cheap bearings that fail in the field.',
     },
   ];
 
@@ -132,104 +117,53 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="flex flex-col bg-slate-950">
+    <div className="flex flex-col bg-white">
       {/* 品牌加载仪式 */}
       <SplashScreen />
 
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Product Categories */}
-      <section className="py-24 bg-slate-950 border-t border-slate-800/60">
+      {/* Value Propositions */}
+      <section className="py-20 bg-white border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
           {/* Section header */}
           <div className="mb-14">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-orange-500" />
-              <p className="text-xs font-semibold tracking-[0.22em] text-orange-500 uppercase">
-                Product Catalog
+              <div className="w-8 h-px bg-[#e85d04]" />
+              <p className="text-[11px] font-bold tracking-[0.22em] text-[#e85d04] uppercase">
+                Why Manufacturers Choose FULI
               </p>
             </div>
-            <h2 className="font-display text-4xl font-bold text-white tracking-tight">
-              {t('categories.title')}
+            <h2 className="font-display text-4xl font-extrabold text-[#0f1923] tracking-tight">
+              Built for Agricultural Machinery
             </h2>
-            <p className="mt-3 text-base text-slate-400 max-w-xl">
-              {t('categories.subtitle')}
+            <p className="mt-3 text-base text-gray-500 max-w-xl leading-relaxed">
+              Practical bearings for real field conditions — not just specs on paper.
             </p>
           </div>
 
-          {/* Cards */}
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {categories.map((cat) => {
-              const Icon = cat.icon;
+          {/* 4 value prop cards */}
+          <div className="grid grid-cols-1 gap-px bg-gray-100 sm:grid-cols-2 lg:grid-cols-4">
+            {valueProps.map((item) => {
+              const Icon = item.icon;
               return (
-                <Link key={cat.key} href={cat.href}>
-                  <div className="group relative h-full cursor-pointer bg-slate-900 border border-slate-800 hover:border-orange-500/50 transition-all duration-300 flex flex-col overflow-hidden">
-                    {/* Left accent reveal */}
-                    <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-orange-500 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-300" />
-
-                    {/* Card body */}
-                    <div className="p-6 flex-1">
-                      {/* Top row: icon + sequence number */}
-                      <div className="flex items-start justify-between mb-6">
-                        <div className="flex h-12 w-12 items-center justify-center border border-slate-700 group-hover:border-orange-500/40 bg-slate-950 transition-all duration-300 shrink-0">
-                          <Icon className="h-5 w-5 text-orange-500" />
-                        </div>
-                        <span className="text-[38px] font-black text-slate-800 select-none leading-none group-hover:text-slate-700 transition-colors">
-                          {cat.num}
-                        </span>
-                      </div>
-
-                      {/* Product code */}
-                      <p className="text-xs font-mono font-semibold text-slate-500 tracking-[0.18em] mb-1.5 uppercase">
-                        {cat.code} Series
-                      </p>
-
-                      {/* Title */}
-                      <h3 className="text-lg font-bold text-white leading-snug mb-3 tracking-tight">
-                        {t(`categories.${cat.key}.title`)}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-sm text-slate-400 leading-relaxed mb-5">
-                        {t(`categories.${cat.key}.description`)}
-                      </p>
-
-                      {/* Spec tags */}
-                      <div className="flex flex-wrap gap-1.5">
-                        {cat.specs.map((spec) => (
-                          <span
-                            key={spec}
-                            className="text-xs font-medium text-slate-500 border border-slate-700 px-2.5 py-1 tracking-wide"
-                          >
-                            {spec}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Bottom CTA bar */}
-                    <div className="border-t border-slate-800 group-hover:border-orange-500/25 px-6 py-3.5 flex items-center justify-between transition-colors duration-300">
-                      <span className="text-xs font-semibold text-slate-500 group-hover:text-orange-500 transition-colors tracking-[0.12em] uppercase">
-                        Explore Series
-                      </span>
-                      <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-orange-500 transition-all duration-300 group-hover:translate-x-0.5" />
-                    </div>
+                <div key={item.title} className="bg-white p-8 flex flex-col gap-5 group hover:shadow-md transition-shadow duration-200">
+                  <div className="flex h-12 w-12 items-center justify-center bg-orange-50 border border-orange-100 group-hover:bg-orange-100 transition-colors duration-200">
+                    <Icon className="h-6 w-6 text-[#e85d04]" />
                   </div>
-                </Link>
+                  <div>
+                    <h3 className="text-base font-bold text-[#0f1923] leading-snug mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
               );
             })}
-          </div>
-
-          {/* View all */}
-          <div className="mt-10">
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-orange-500 transition-colors group border border-slate-800 hover:border-orange-500/40 px-5 py-2.5"
-            >
-              {t('categories.viewAll')}
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
           </div>
         </div>
       </section>
