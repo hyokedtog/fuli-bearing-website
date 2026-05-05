@@ -169,54 +169,54 @@ export default function HomePage() {
       </section>
 
       {/* Features */}
-      <section className="py-24 bg-[#04080f] border-t border-slate-800/60">
+      <section className="py-24 bg-gray-50 border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           {/* Section header */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-px bg-slate-600" />
-                <p className="text-xs font-semibold tracking-[0.22em] text-slate-400 uppercase">
+                <div className="w-8 h-px bg-[#e85d04]" />
+                <p className="text-[11px] font-bold tracking-[0.22em] text-[#e85d04] uppercase">
                   Manufacturer Advantage
                 </p>
               </div>
-              <h2 className="font-display text-4xl font-bold text-white tracking-tight">
+              <h2 className="font-display text-4xl font-extrabold text-[#0f1923] tracking-tight">
                 {t('features.title')}
               </h2>
             </div>
-            <p className="text-base text-slate-400 max-w-xs lg:text-right leading-relaxed shrink-0">
+            <p className="text-base text-gray-500 max-w-xs lg:text-right leading-relaxed shrink-0">
               Factory-direct supply with full export documentation and dedicated international support.
             </p>
           </div>
 
           {/* Feature rows */}
-          <div className="divide-y divide-slate-800/70">
+          <div className="divide-y divide-gray-200">
             {features.map((feat) => {
               const Icon = feat.icon;
               return (
                 <div
                   key={feat.key}
-                  className="group flex items-center gap-6 py-7 transition-colors hover:bg-slate-900/30 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+                  className="group flex items-center gap-6 py-7 transition-colors hover:bg-white -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
                 >
                   {/* Icon */}
-                  <div className="shrink-0 flex h-12 w-12 items-center justify-center border border-slate-800 group-hover:border-slate-700 bg-slate-900/50 transition-all duration-300">
-                    <Icon className="h-5 w-5 text-orange-500" />
+                  <div className="shrink-0 flex h-12 w-12 items-center justify-center border border-gray-200 group-hover:border-orange-200 bg-white transition-all duration-200">
+                    <Icon className="h-5 w-5 text-[#e85d04]" />
                   </div>
 
                   {/* Text */}
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold text-white uppercase tracking-[0.08em] mb-1.5">
+                    <h3 className="text-base font-bold text-[#0f1923] uppercase tracking-[0.08em] mb-1.5">
                       {t(`features.${feat.key}.title`)}
                     </h3>
-                    <p className="text-sm text-slate-400 leading-relaxed">
+                    <p className="text-sm text-gray-500 leading-relaxed">
                       {t(`features.${feat.key}.description`)}
                     </p>
                   </div>
 
                   {/* Credential badge */}
                   <div className="shrink-0 hidden sm:block">
-                    <span className="text-xs font-mono font-semibold text-slate-400 group-hover:text-slate-300 border border-slate-700 group-hover:border-slate-600 px-3 py-1.5 tracking-[0.1em] uppercase whitespace-nowrap transition-colors duration-300">
+                    <span className="text-xs font-semibold text-gray-500 group-hover:text-[#e85d04] border border-gray-200 group-hover:border-orange-200 px-3 py-1.5 tracking-[0.1em] uppercase whitespace-nowrap transition-colors duration-200">
                       {feat.badge}
                     </span>
                   </div>
@@ -229,40 +229,40 @@ export default function HomePage() {
       </section>
 
       {/* Applications */}
-      <section className="py-24 bg-slate-950 border-t border-slate-800/60">
+      <section className="py-24 bg-white border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           {/* Section header */}
           <div className="mb-14">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-slate-600" />
-              <p className="text-xs font-semibold tracking-[0.22em] text-slate-400 uppercase">
+              <div className="w-8 h-px bg-[#e85d04]" />
+              <p className="text-[11px] font-bold tracking-[0.22em] text-[#e85d04] uppercase">
                 Industries Served
               </p>
             </div>
-            <h2 className="font-display text-4xl font-bold text-white tracking-tight">
+            <h2 className="font-display text-4xl font-extrabold text-[#0f1923] tracking-tight">
               {t('applications.title')}
             </h2>
-            <p className="mt-3 text-base text-slate-400 max-w-lg leading-relaxed">
+            <p className="mt-3 text-base text-gray-500 max-w-lg leading-relaxed">
               {t('applications.subtitle')}
             </p>
           </div>
 
           {/* Industry cards */}
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {applications.map((app) => {
               const Icon = app.icon;
               return (
                 <div
                   key={app.key}
-                  className="group border border-slate-800 bg-slate-900/30 p-6 hover:border-slate-700 hover:bg-slate-900/60 transition-all duration-300"
+                  className="group border border-gray-200 bg-white p-6 hover:border-orange-200 hover:shadow-md transition-all duration-200"
                 >
                   {/* Icon + label row */}
                   <div className="flex items-center gap-4 mb-5">
-                    <div className="flex h-11 w-11 items-center justify-center border border-slate-800 group-hover:border-slate-700 bg-slate-950 transition-all duration-300 shrink-0">
-                      <Icon className="h-5 w-5 text-slate-600 group-hover:text-orange-500 transition-colors duration-300" />
+                    <div className="flex h-11 w-11 items-center justify-center border border-gray-200 group-hover:border-orange-200 bg-gray-50 transition-all duration-200 shrink-0">
+                      <Icon className="h-5 w-5 text-gray-400 group-hover:text-[#e85d04] transition-colors duration-200" />
                     </div>
-                    <h3 className="text-base font-bold text-white uppercase tracking-[0.1em]">
+                    <h3 className="text-base font-bold text-[#0f1923] uppercase tracking-[0.1em]">
                       {t(`applications.${app.key}`)}
                     </h3>
                   </div>
@@ -270,8 +270,8 @@ export default function HomePage() {
                   {/* Use cases */}
                   <div className="space-y-2 pl-[60px]">
                     {app.uses.map((use) => (
-                      <p key={use} className="flex items-center gap-2 text-sm text-slate-400">
-                        <span className="w-1 h-1 rounded-full bg-orange-500/50 shrink-0" />
+                      <p key={use} className="flex items-center gap-2 text-sm text-gray-500">
+                        <span className="w-1 h-1 rounded-full bg-[#e85d04]/50 shrink-0" />
                         {use}
                       </p>
                     ))}
@@ -285,33 +285,24 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-[#04080f] border-t border-slate-800/60">
+      <section className="py-24 bg-gray-50 border-t border-gray-100">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="border border-slate-800 bg-slate-900/40 p-12 md:p-16 text-center relative overflow-hidden">
-            {/* Grid texture */}
-            <div
-              className="absolute inset-0 opacity-[0.04]"
-              style={{
-                backgroundImage:
-                  'linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)',
-                backgroundSize: '48px 48px',
-              }}
-            />
-            {/* Top accent line */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-orange-500/60" />
+          <div className="border border-gray-200 bg-white p-12 md:p-16 text-center relative overflow-hidden">
+            {/* Top orange accent line */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[3px] bg-[#e85d04]" />
             <div className="relative z-10">
-              <p className="text-xs font-semibold tracking-[0.22em] text-orange-500 uppercase mb-5">
+              <p className="text-[11px] font-bold tracking-[0.22em] text-[#e85d04] uppercase mb-5">
                 Get in Touch
               </p>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+              <h2 className="font-display text-4xl md:text-5xl font-extrabold text-[#0f1923] tracking-tight mb-4">
                 {t('cta.title')}
               </h2>
-              <p className="text-base text-slate-400 mb-10 max-w-xl mx-auto leading-relaxed">
+              <p className="text-base text-gray-500 mb-10 max-w-xl mx-auto leading-relaxed">
                 {t('cta.description')}
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-9 py-4 bg-orange-600 hover:bg-orange-500 text-white text-base font-semibold transition-all duration-300 shadow-[0_0_30px_rgba(234,88,12,0.2)] hover:shadow-[0_0_40px_rgba(234,88,12,0.4)]"
+                className="inline-flex items-center gap-2 px-9 py-4 bg-[#e85d04] hover:bg-[#c94d00] text-white text-base font-bold tracking-wide transition-colors duration-200"
               >
                 {t('cta.button')}
                 <ArrowRight className="h-4 w-4" />
