@@ -1,6 +1,19 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import HeroSection from '@/components/hero-section';
+import {
+  ArrowRight,
+  CircleDollarSign,
+  Gauge,
+  PackageCheck,
+  ShieldCheck,
+  Wrench,
+  Wheat,
+  Cog,
+  Tractor,
+  Sprout,
+  PackageSearch,
+} from 'lucide-react';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://fuli-bearing-website.vercel.app';
 
@@ -17,6 +30,206 @@ const meta = {
   },
 };
 
+const HOME_COPY = {
+  en: {
+    valueEyebrow: 'WHY MANUFACTURERS CHOOSE FULI',
+    valueTitle: 'Built for Agricultural Machinery',
+    valueText: 'Practical bearings for real field conditions — not just specs on paper.',
+    valueCards: [
+      {
+        title: 'Agricultural Equipment Bearings',
+        text: 'Disc harrow, insert, pillow block, and flanged units built for tractors, seeders, and harvesters.',
+        icon: Wheat,
+      },
+      {
+        title: 'Stable Quality for Low-Speed Applications',
+        text: 'Consistent dimensional tolerance and grease retention for field-facing, low-RPM bearing positions.',
+        icon: Gauge,
+      },
+      {
+        title: 'Export Packing & Custom Support',
+        text: 'Neutral packing, branded boxes, or bulk export cartons. OEM marking and documentation available.',
+        icon: PackageCheck,
+      },
+      {
+        title: 'Practical Solutions, Not Just Cheap Prices',
+        text: 'Mid-range quality that performs reliably — a better choice than ultra-cheap bearings that fail in the field.',
+        icon: ShieldCheck,
+      },
+    ],
+    featuresEyebrow: 'MANUFACTURER ADVANTAGE',
+    featuresTitle: 'Why Choose FULI',
+    featuresIntro:
+      'Factory-direct supply with full export documentation and dedicated international support.',
+    features: [
+      {
+        title: 'PREMIUM QUALITY',
+        description:
+          'ISO 9001 certified manufacturing with strict quality control at every stage.',
+        badge: 'ISO 9001 CERTIFIED',
+        icon: ShieldCheck,
+      },
+      {
+        title: 'COMPETITIVE PRICING',
+        description: 'Factory-direct prices without middlemen. Volume discounts available.',
+        badge: 'FACTORY DIRECT',
+        icon: CircleDollarSign,
+      },
+      {
+        title: 'FAST DELIVERY',
+        description:
+          'Large inventory ready for immediate shipment. Custom orders in 15–30 days.',
+        badge: 'SHIPS 24–72 HRS',
+        icon: PackageCheck,
+      },
+      {
+        title: 'CUSTOM SOLUTIONS',
+        description:
+          'OEM/ODM accepted. Special sizes, materials, and packaging upon request.',
+        badge: 'OEM / ODM READY',
+        icon: Wrench,
+      },
+    ],
+    applicationsEyebrow: 'APPLICATIONS',
+    applicationsTitle: 'Where Our Bearings Work',
+    applicationsText:
+      'Reliable bearing solutions for core agricultural equipment and replacement markets.',
+    applications: [
+      {
+        title: 'Tractors',
+        items: ['Wheel hubs', 'Gearboxes', 'PTO systems'],
+        icon: Tractor,
+      },
+      {
+        title: 'Harvesters',
+        items: ['Header units', 'Conveyors', 'Grain systems'],
+        icon: Wheat,
+      },
+      {
+        title: 'Tillage Equipment',
+        items: ['Disc harrows', 'Plows', 'Cultivators'],
+        icon: Cog,
+      },
+      {
+        title: 'Seeders & Planters',
+        items: ['Row units', 'Gauge wheels', 'Opener systems'],
+        icon: Sprout,
+      },
+      {
+        title: 'Balers',
+        items: ['Rollers', 'Shafts', 'Chain-drive support points'],
+        icon: PackageCheck,
+      },
+      {
+        title: 'Replacement Market',
+        items: ['Fast-moving models', 'For distributors', 'And dealers'],
+        icon: PackageSearch,
+      },
+    ],
+    ctaEyebrow: 'GET IN TOUCH',
+    ctaTitle: 'Ready to Order?',
+    ctaText: 'Send us your requirements and get a competitive quote within 24 hours.',
+    ctaButton: 'Request a Quote',
+  },
+  ar: {
+    valueEyebrow: 'لماذا يختار المصنعون فولي',
+    valueTitle: 'مصمم للمعدات الزراعية',
+    valueText: 'محامل عملية لظروف العمل الحقيقية في الحقول، وليست مجرد مواصفات على الورق.',
+    valueCards: [
+      {
+        title: 'محامل للمعدات الزراعية',
+        text: 'وحدات ديسك هارو وإنسيرت وبيلو بلوك وفلانج مصممة للجرارات والزارعات والحصادات.',
+        icon: Wheat,
+      },
+      {
+        title: 'جودة مستقرة للتطبيقات منخفضة السرعة',
+        text: 'ثبات في الأبعاد واحتفاظ بالشحم في مواقع المحامل المعرضة لظروف الحقول وسرعات RPM المنخفضة.',
+        icon: Gauge,
+      },
+      {
+        title: 'دعم التغليف والتخصيص للتصدير',
+        text: 'تغليف محايد أو صناديق بعلامتك أو كراتين تصدير بالجملة. الوسم والوثائق متاحة لـ OEM.',
+        icon: PackageCheck,
+      },
+      {
+        title: 'حلول عملية وليست مجرد أسعار رخيصة',
+        text: 'جودة متوسطة موثوقة في الأداء، وخيار أفضل من المحامل الرخيصة جدًا التي تفشل في الحقل.',
+        icon: ShieldCheck,
+      },
+    ],
+    featuresEyebrow: 'ميزة الشركة المصنّعة',
+    featuresTitle: 'لماذا تختار فولي',
+    featuresIntro:
+      'توريد مباشر من المصنع مع وثائق تصدير كاملة ودعم دولي مخصص.',
+    features: [
+      {
+        title: 'جودة ممتازة',
+        description: 'تصنيع معتمد ISO 9001 مع رقابة صارمة على الجودة في كل مرحلة.',
+        badge: 'ISO 9001 CERTIFIED',
+        icon: ShieldCheck,
+      },
+      {
+        title: 'أسعار تنافسية',
+        description: 'أسعار مباشرة من المصنع دون وسطاء، مع خصومات للكميات.',
+        badge: 'FACTORY DIRECT',
+        icon: CircleDollarSign,
+      },
+      {
+        title: 'تسليم سريع',
+        description: 'مخزون كبير جاهز للشحن الفوري، والطلبات المخصصة خلال 15 إلى 30 يومًا.',
+        badge: 'SHIPS 24–72 HRS',
+        icon: PackageCheck,
+      },
+      {
+        title: 'حلول مخصصة',
+        description: 'نقبل OEM/ODM مع مقاسات ومواد وتغليف خاص حسب الطلب.',
+        badge: 'OEM / ODM READY',
+        icon: Wrench,
+      },
+    ],
+    applicationsEyebrow: 'التطبيقات',
+    applicationsTitle: 'أين تعمل محاملنا',
+    applicationsText:
+      'حلول محامل موثوقة للمعدات الزراعية الأساسية وأسواق الاستبدال.',
+    applications: [
+      {
+        title: 'الجرارات',
+        items: ['مراكز العجلات', 'علب التروس', 'أنظمة PTO'],
+        icon: Tractor,
+      },
+      {
+        title: 'الحصادات',
+        items: ['وحدات الهيدر', 'الناقلات', 'أنظمة الحبوب'],
+        icon: Wheat,
+      },
+      {
+        title: 'معدات الحراثة',
+        items: ['الديسك هارو', 'المحاريث', 'المزارع'],
+        icon: Cog,
+      },
+      {
+        title: 'الزارعات والبذارات',
+        items: ['وحدات الصف', 'عجلات القياس', 'أنظمة الفتح'],
+        icon: Sprout,
+      },
+      {
+        title: 'المكابس',
+        items: ['البكرات', 'الأعمدة', 'نقاط دعم السلسلة'],
+        icon: PackageCheck,
+      },
+      {
+        title: 'سوق الاستبدال',
+        items: ['الموديلات السريعة الحركة', 'للموزعين', 'وللتجار'],
+        icon: PackageSearch,
+      },
+    ],
+    ctaEyebrow: 'تواصل معنا',
+    ctaTitle: 'جاهز للطلب؟',
+    ctaText: 'أرسل لنا متطلباتك واحصل على عرض سعر تنافسي خلال 24 ساعة.',
+    ctaButton: 'اطلب عرض سعر',
+  },
+} as const;
+
 export async function generateMetadata({
   params: { locale },
 }: {
@@ -30,137 +243,58 @@ export async function generateMetadata({
       canonical: `${BASE_URL}/${locale}`,
       languages: { en: `${BASE_URL}/en`, ar: `${BASE_URL}/ar` },
     },
-    openGraph: { title: m.title, description: m.description, url: `${BASE_URL}/${locale}`, siteName: 'FULI Machinery' },
+    openGraph: {
+      title: m.title,
+      description: m.description,
+      url: `${BASE_URL}/${locale}`,
+      siteName: 'FULI Machinery',
+    },
   };
 }
-import HeroSection from '@/components/hero-section';
-import SplashScreen from '@/components/splash-screen';
-import {
-  ArrowRight,
-  ShieldCheck,
-  Wrench,
-  CircleDollarSign,
-  HardHat,
-  Cog,
-  Zap,
-  Building2,
-  Gauge,
-  PackageCheck,
-  Wheat,
-  Car,
-} from 'lucide-react';
 
-export default function HomePage() {
-  const t = useTranslations();
-
-  const valueProps = [
-    {
-      icon: Wheat,
-      title: 'Agricultural Equipment Bearings',
-      desc: 'Disc harrow, insert, pillow block, and flanged units built for tractors, seeders, and harvesting machines.',
-    },
-    {
-      icon: Gauge,
-      title: 'Stable Quality for Low-Speed Applications',
-      desc: 'Consistent dimensional tolerance and grease retention for field-facing, low-RPM bearing positions.',
-    },
-    {
-      icon: PackageCheck,
-      title: 'Export Packing & Custom Support',
-      desc: 'Neutral packing, branded boxes, or bulk export cartons. OEM marking and documentation available.',
-    },
-    {
-      icon: ShieldCheck,
-      title: 'Practical Solutions, Not Just Cheap Prices',
-      desc: 'Mid-range quality that performs reliably — a better choice than ultra-cheap bearings that fail in the field.',
-    },
-  ];
-
-  const features = [
-    { key: 'quality', icon: ShieldCheck, badge: 'ISO 9001 Certified' },
-    { key: 'price', icon: CircleDollarSign, badge: 'Factory Direct' },
-    { key: 'delivery', icon: PackageCheck, badge: 'Ships 24–72 hrs' },
-    { key: 'custom', icon: Wrench, badge: 'OEM / ODM Ready' },
-  ];
-
-  const applications = [
-    {
-      key: 'automotive',
-      icon: Car,
-      uses: ['Wheel hubs', 'Transmissions', 'Steering columns'],
-    },
-    {
-      key: 'agriculture',
-      icon: Wheat,
-      uses: ['Combine harvesters', 'Grain augers', 'Tractors'],
-    },
-    {
-      key: 'mining',
-      icon: HardHat,
-      uses: ['Rock crushers', 'Conveyor systems', 'Drilling rigs'],
-    },
-    {
-      key: 'machinery',
-      icon: Cog,
-      uses: ['Pumps & compressors', 'Gearboxes', 'Machine tools'],
-    },
-    {
-      key: 'electric',
-      icon: Zap,
-      uses: ['Motor shafts', 'Generators', 'Industrial fans'],
-    },
-    {
-      key: 'construction',
-      icon: Building2,
-      uses: ['Excavators', 'Tower cranes', 'Concrete mixers'],
-    },
-  ];
+export default function HomePage({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  const copy = HOME_COPY[locale as keyof typeof HOME_COPY] ?? HOME_COPY.en;
 
   return (
     <div className="flex flex-col bg-white">
-      {/* 品牌加载仪式 */}
-      <SplashScreen />
-
-      {/* Hero Section */}
       <HeroSection />
 
-      {/* Value Propositions */}
-      <section className="py-20 bg-white border-t border-gray-100">
+      <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          {/* Section header */}
-          <div className="mb-14">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-[#e85d04]" />
-              <p className="text-[11px] font-bold tracking-[0.22em] text-[#e85d04] uppercase">
-                Why Manufacturers Choose FULI
+          <div className="mb-12 max-w-3xl lg:mb-14">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="h-px w-10 bg-[#f26a21]" />
+              <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#f26a21]">
+                {copy.valueEyebrow}
               </p>
             </div>
-            <h2 className="font-display text-4xl font-extrabold text-[#0f1923] tracking-tight">
-              Built for Agricultural Machinery
+            <h2 className="font-display text-4xl font-extrabold tracking-[-0.03em] text-[#0f1923] sm:text-5xl">
+              {copy.valueTitle}
             </h2>
-            <p className="mt-3 text-base text-gray-500 max-w-xl leading-relaxed">
-              Practical bearings for real field conditions — not just specs on paper.
+            <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+              {copy.valueText}
             </p>
           </div>
 
-          {/* 4 value prop cards */}
-          <div className="grid grid-cols-1 gap-px bg-gray-100 sm:grid-cols-2 lg:grid-cols-4">
-            {valueProps.map((item) => {
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {copy.valueCards.map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.title} className="bg-white p-8 flex flex-col gap-5 group hover:shadow-md transition-shadow duration-200">
-                  <div className="flex h-12 w-12 items-center justify-center bg-orange-50 border border-orange-100 group-hover:bg-orange-100 transition-colors duration-200">
-                    <Icon className="h-6 w-6 text-[#e85d04]" />
+                <div
+                  key={item.title}
+                  className="rounded-[26px] border border-slate-200 bg-white p-7 shadow-[0_20px_50px_-36px_rgba(15,25,35,0.45)] transition-transform duration-200 hover:-translate-y-1"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#fff1e8] text-[#f26a21]">
+                    <Icon className="h-5 w-5" />
                   </div>
-                  <div>
-                    <h3 className="text-base font-bold text-[#0f1923] leading-snug mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-gray-500 leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
+                  <h3 className="mt-6 text-lg font-bold leading-7 text-[#0f1923]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
                 </div>
               );
             })}
@@ -168,111 +302,93 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-24 bg-white border-t border-gray-100">
+      <section className="bg-[#f5f7fa] py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          {/* Section header */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-px bg-[#e85d04]" />
-                <p className="text-[11px] font-bold tracking-[0.22em] text-[#e85d04] uppercase">
-                  Manufacturer Advantage
+          <div className="mb-12 flex flex-col gap-5 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <div className="mb-4 flex items-center gap-3">
+                <div className="h-px w-10 bg-[#f26a21]" />
+                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#f26a21]">
+                  {copy.featuresEyebrow}
                 </p>
               </div>
-              <h2 className="font-display text-4xl font-extrabold text-[#0f1923] tracking-tight">
-                {t('features.title')}
+              <h2 className="font-display text-4xl font-extrabold tracking-[-0.03em] text-[#0f1923] sm:text-5xl">
+                {copy.featuresTitle}
               </h2>
             </div>
-            <p className="text-base text-gray-500 max-w-xs lg:text-right leading-relaxed shrink-0">
-              Factory-direct supply with full export documentation and dedicated international support.
+            <p className="max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+              {copy.featuresIntro}
             </p>
           </div>
 
-          {/* Feature rows */}
-          <div className="divide-y divide-gray-200">
-            {features.map((feat) => {
-              const Icon = feat.icon;
+          <div className="rounded-[30px] border border-slate-200 bg-white px-6 shadow-[0_24px_70px_-50px_rgba(15,25,35,0.45)] sm:px-8">
+            {copy.features.map((item, index) => {
+              const Icon = item.icon;
+              const isLast = index === copy.features.length - 1;
               return (
                 <div
-                  key={feat.key}
-                  className="group flex items-center gap-6 py-7 transition-colors hover:bg-white -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+                  key={item.title}
+                  className={`flex flex-col gap-5 py-7 sm:py-8 lg:flex-row lg:items-center lg:gap-8 ${isLast ? '' : 'border-b border-slate-200'}`}
                 >
-                  {/* Icon */}
-                  <div className="shrink-0 flex h-12 w-12 items-center justify-center border border-gray-200 group-hover:border-orange-200 bg-white transition-all duration-200">
-                    <Icon className="h-5 w-5 text-[#e85d04]" />
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#fff1e8] text-[#f26a21]">
+                    <Icon className="h-6 w-6" />
                   </div>
-
-                  {/* Text */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold text-[#0f1923] uppercase tracking-[0.08em] mb-1.5">
-                      {t(`features.${feat.key}.title`)}
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-base font-bold uppercase tracking-[0.14em] text-[#0f1923]">
+                      {item.title}
                     </h3>
-                    <p className="text-sm text-gray-500 leading-relaxed">
-                      {t(`features.${feat.key}.description`)}
+                    <p className="mt-2 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+                      {item.description}
                     </p>
                   </div>
-
-                  {/* Credential badge */}
-                  <div className="shrink-0 hidden sm:block">
-                    <span className="text-xs font-semibold text-gray-500 group-hover:text-[#e85d04] border border-gray-200 group-hover:border-orange-200 px-3 py-1.5 tracking-[0.1em] uppercase whitespace-nowrap transition-colors duration-200">
-                      {feat.badge}
+                  <div className="shrink-0">
+                    <span className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                      {item.badge}
                     </span>
                   </div>
                 </div>
               );
             })}
           </div>
-
         </div>
       </section>
 
-      {/* Applications */}
-      <section className="py-24 bg-white border-t border-gray-100">
+      <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          {/* Section header */}
-          <div className="mb-14">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-[#e85d04]" />
-              <p className="text-[11px] font-bold tracking-[0.22em] text-[#e85d04] uppercase">
-                Industries Served
+          <div className="mb-12 max-w-3xl lg:mb-14">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="h-px w-10 bg-[#f26a21]" />
+              <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#f26a21]">
+                {copy.applicationsEyebrow}
               </p>
             </div>
-            <h2 className="font-display text-4xl font-extrabold text-[#0f1923] tracking-tight">
-              {t('applications.title')}
+            <h2 className="font-display text-4xl font-extrabold tracking-[-0.03em] text-[#0f1923] sm:text-5xl">
+              {copy.applicationsTitle}
             </h2>
-            <p className="mt-3 text-base text-gray-500 max-w-lg leading-relaxed">
-              {t('applications.subtitle')}
+            <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+              {copy.applicationsText}
             </p>
           </div>
 
-          {/* Industry cards */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {applications.map((app) => {
-              const Icon = app.icon;
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {copy.applications.map((item) => {
+              const Icon = item.icon;
               return (
                 <div
-                  key={app.key}
-                  className="group border border-gray-200 bg-white p-6 hover:border-orange-200 hover:shadow-md transition-all duration-200"
+                  key={item.title}
+                  className="rounded-[26px] border border-slate-200 bg-white p-7 shadow-[0_20px_50px_-36px_rgba(15,25,35,0.42)]"
                 >
-                  {/* Icon + label row */}
-                  <div className="flex items-center gap-4 mb-5">
-                    <div className="flex h-11 w-11 items-center justify-center border border-gray-200 group-hover:border-orange-200 bg-gray-50 transition-all duration-200 shrink-0">
-                      <Icon className="h-5 w-5 text-gray-400 group-hover:text-[#e85d04] transition-colors duration-200" />
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#fff1e8] text-[#f26a21]">
+                      <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="text-base font-bold text-[#0f1923] uppercase tracking-[0.1em]">
-                      {t(`applications.${app.key}`)}
-                    </h3>
+                    <h3 className="text-lg font-bold text-[#0f1923]">{item.title}</h3>
                   </div>
-
-                  {/* Use cases */}
-                  <div className="space-y-2 pl-[60px]">
-                    {app.uses.map((use) => (
-                      <p key={use} className="flex items-center gap-2 text-sm text-gray-500">
-                        <span className="w-1 h-1 rounded-full bg-[#e85d04]/50 shrink-0" />
-                        {use}
+                  <div className="mt-6 space-y-3">
+                    {item.items.map((bullet) => (
+                      <p key={bullet} className="flex items-center gap-3 text-sm text-slate-600">
+                        <span className="h-2 w-2 rounded-full bg-[#f26a21]" />
+                        {bullet}
                       </p>
                     ))}
                   </div>
@@ -280,34 +396,28 @@ export default function HomePage() {
               );
             })}
           </div>
-
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-white border-t border-gray-100">
+      <section className="bg-[#f5f7fa] py-20 sm:py-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="border border-gray-200 bg-white p-12 md:p-16 text-center relative overflow-hidden">
-            {/* Top orange accent line */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[3px] bg-[#e85d04]" />
-            <div className="relative z-10">
-              <p className="text-[11px] font-bold tracking-[0.22em] text-[#e85d04] uppercase mb-5">
-                Get in Touch
-              </p>
-              <h2 className="font-display text-4xl md:text-5xl font-extrabold text-[#0f1923] tracking-tight mb-4">
-                {t('cta.title')}
-              </h2>
-              <p className="text-base text-gray-500 mb-10 max-w-xl mx-auto leading-relaxed">
-                {t('cta.description')}
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-9 py-4 bg-[#e85d04] hover:bg-[#c94d00] text-white text-base font-bold tracking-wide transition-colors duration-200"
-              >
-                {t('cta.button')}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
+          <div className="rounded-[30px] border border-slate-200 bg-white px-6 py-14 text-center shadow-[0_26px_70px_-52px_rgba(15,25,35,0.42)] sm:px-10 sm:py-16">
+            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#f26a21]">
+              {copy.ctaEyebrow}
+            </p>
+            <h2 className="mt-5 font-display text-4xl font-extrabold tracking-[-0.03em] text-[#0f1923] sm:text-5xl">
+              {copy.ctaTitle}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+              {copy.ctaText}
+            </p>
+            <Link
+              href={`/${locale}/contact`}
+              className="mt-9 inline-flex items-center gap-2 rounded-2xl bg-[#f26a21] px-7 py-4 text-sm font-semibold tracking-[0.08em] text-white shadow-[0_16px_36px_-22px_rgba(242,106,33,0.95)] transition-colors duration-200 hover:bg-[#dd5b17]"
+            >
+              {copy.ctaButton}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

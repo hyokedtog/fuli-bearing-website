@@ -1,106 +1,146 @@
 'use client';
 
+import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
-import MuxPlayer from '@mux/mux-player-react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
-const TRUST_BADGES = [
-  'ISO 9001 Certified',
-  'Factory Direct Export',
-  'Ships to 30+ Countries',
-  'OEM / ODM Ready',
-];
+const HERO_COPY = {
+  en: {
+    eyebrow: 'AGRICULTURAL BEARING SPECIALIST · SHANDONG, CHINA',
+    titleFirst: 'Reliable Agricultural',
+    titleSecond: 'Bearings for Global',
+    titleThird: 'Machinery Brands',
+    subtitle:
+      'Stable quality, practical solutions, and export-ready support for agricultural equipment and low-speed machinery.',
+    primaryCta: 'Request a Quote',
+    secondaryCta: 'View Bearing Solutions',
+    trustItems: [
+      'ISO 9001 Certified',
+      'Factory Direct Export',
+      'Ships to 30+ Countries',
+      'OEM / ODM Ready',
+    ],
+    mediaAlt: 'Industrial branded agricultural bearing poster',
+    mediaLabel: 'STATIC BRAND VISUAL',
+    mediaCardTitle: 'Export-Ready Support',
+    mediaCardText: 'Bearing supply for distributors, OEM buyers, and replacement markets.',
+    mediaCaption: 'TRACTORS · HARVESTERS · TILLAGE EQUIPMENT',
+  },
+  ar: {
+    eyebrow: 'متخصص المحامل الزراعية · شاندونغ، الصين',
+    titleFirst: 'محامل زراعية موثوقة',
+    titleSecond: 'للشركات العالمية',
+    titleThird: 'المصنّعة للآلات',
+    subtitle:
+      'جودة مستقرة، حلول عملية، ودعم جاهز للتصدير لمعدات الزراعة والآلات منخفضة السرعة.',
+    primaryCta: 'اطلب عرض سعر',
+    secondaryCta: 'عرض حلول المحامل',
+    trustItems: [
+      'معتمد ISO 9001',
+      'تصدير مباشر من المصنع',
+      'شحن إلى أكثر من 30 دولة',
+      'جاهز لـ OEM / ODM',
+    ],
+    mediaAlt: 'ملصق صناعي دعائي لمحامل زراعية',
+    mediaLabel: 'صورة علامة ثابتة',
+    mediaCardTitle: 'دعم جاهز للتصدير',
+    mediaCardText: 'توريد محامل للموزعين ومشتري OEM وأسواق الاستبدال.',
+    mediaCaption: 'جرارات · حصادات · معدات حراثة',
+  },
+} as const;
 
 export default function HeroSection() {
   const locale = useLocale();
+  const copy = HERO_COPY[locale as keyof typeof HERO_COPY] ?? HERO_COPY.en;
 
   return (
-    <section className="relative w-full bg-white">
-      <div className="flex flex-col lg:flex-row" style={{ minHeight: 'calc(100vh - 72px)' }}>
+    <section className="bg-[#f5f7fa]">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:items-center">
+          <div className="flex flex-col justify-center">
+            <div className="mb-7 flex items-center gap-3">
+              <div className="h-px w-12 bg-[#f26a21]" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#f26a21]">
+                {copy.eyebrow}
+              </span>
+            </div>
 
-        {/* ── Left: Content ── */}
-        <div className="flex flex-col justify-center px-8 py-20 lg:px-16 lg:py-24 lg:w-[56%]">
+            <h1 className="max-w-4xl font-display text-[46px] font-extrabold leading-[0.94] tracking-[-0.03em] text-[#0f1923] sm:text-[60px] lg:text-[74px]">
+              <span className="block">{copy.titleFirst}</span>
+              <span className="block">
+                <span className="text-[#f26a21]">
+                  {locale === 'ar' ? copy.titleSecond : 'Bearings'}
+                </span>
+                {locale === 'ar' ? null : ' for Global'}
+              </span>
+              <span className="block">
+                {locale === 'ar' ? copy.titleThird : 'Machinery Brands'}
+              </span>
+            </h1>
 
-          {/* Pre-label */}
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-10 h-px bg-[#e85d04]" />
-            <span className="text-[11px] font-bold tracking-[0.25em] text-[#e85d04] uppercase">
-              Agricultural Bearing Specialist · Shandong, China
-            </span>
+            <p className="mt-7 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+              {copy.subtitle}
+            </p>
+
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href={`/${locale}/contact`}
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#f26a21] px-7 py-4 text-sm font-semibold tracking-[0.08em] text-white shadow-[0_16px_36px_-22px_rgba(242,106,33,0.95)] transition-colors duration-200 hover:bg-[#dd5b17]"
+              >
+                {copy.primaryCta}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href={`/${locale}/products`}
+                className="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-7 py-4 text-sm font-semibold tracking-[0.08em] text-[#0f1923] transition-colors duration-200 hover:border-slate-400 hover:bg-slate-50"
+              >
+                {copy.secondaryCta}
+              </Link>
+            </div>
+
+            <div className="mt-10 grid gap-3 sm:grid-cols-2">
+              {copy.trustItems.map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-[0_12px_28px_-24px_rgba(15,25,35,0.45)]"
+                >
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#fff0e7] text-[#f26a21]">
+                    <CheckCircle2 className="h-4 w-4" />
+                  </span>
+                  <span className="text-sm font-medium text-slate-600">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Main headline */}
-          <h1 className="font-display text-[52px] md:text-[64px] lg:text-[72px] font-extrabold text-[#0f1923] leading-[0.97] tracking-tight mb-7">
-            Reliable<br />
-            Agricultural<br />
-            <em className="not-italic text-[#e85d04]">Bearings</em><br />
-            for Global<br />
-            Machinery Brands
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-base md:text-lg text-gray-500 font-normal leading-relaxed max-w-lg mb-10">
-            Stable quality, practical solutions, and export-ready bearing support for
-            agricultural equipment, low-speed machinery, and replacement markets.
-          </p>
-
-          {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Link
-              href={`/${locale}/contact`}
-              className="inline-flex items-center justify-center gap-2 px-9 py-4 bg-[#e85d04] hover:bg-[#c94d00] text-white text-[15px] font-bold tracking-wide transition-colors duration-200"
-            >
-              Request a Quote
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-            <Link
-              href={`/${locale}/products`}
-              className="inline-flex items-center justify-center gap-2 px-9 py-4 border-2 border-[#0f1923] text-[#0f1923] hover:bg-[#0f1923] hover:text-white text-[15px] font-semibold tracking-wide transition-colors duration-200"
-            >
-              View Bearing Solutions
-            </Link>
-          </div>
-
-          {/* Trust badges */}
-          <div className="flex flex-wrap gap-x-6 gap-y-3 pt-5 border-t border-gray-100">
-            {TRUST_BADGES.map((badge) => (
-              <div key={badge} className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-[#e85d04] shrink-0" />
-                <span className="text-sm font-medium text-gray-500">{badge}</span>
+          <div className="relative">
+            <div className="relative min-h-[360px] overflow-hidden rounded-[32px] border border-slate-200 bg-[#e9eef2] shadow-[0_30px_90px_-50px_rgba(15,25,35,0.48)] sm:min-h-[460px] lg:min-h-[620px]">
+              <Image
+                src="/homepage-hero-poster.svg"
+                alt={copy.mediaAlt}
+                fill
+                priority
+                sizes="(min-width: 1024px) 48vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(15,25,35,0.08))]" />
+              <div className="absolute left-5 top-5 rounded-2xl border border-white/80 bg-white/88 px-4 py-3 shadow-lg backdrop-blur">
+                <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#f26a21]">
+                  {copy.mediaLabel}
+                </p>
+                <p className="mt-2 text-sm font-semibold text-[#0f1923]">{copy.mediaCardTitle}</p>
+                <p className="mt-1 max-w-[16rem] text-sm leading-6 text-slate-600">
+                  {copy.mediaCardText}
+                </p>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ── Right: Video panel ── */}
-        {/*
-          TO REPLACE VIDEO: change playbackId below to your agricultural machinery Mux video ID.
-          Or swap <MuxPlayer> with <img src="..." /> for a static photo.
-          Keep the absolute/inset-0 wrapper so the image/video fills the panel.
-        */}
-        <div className="relative lg:flex-1 min-h-[50vh] lg:min-h-full bg-gray-100 overflow-hidden">
-          <div className="absolute inset-0">
-            <MuxPlayer
-              playbackId="TJx5LIjkM501J00OYq7YSOJWqMPgQIGJORoohjfpUL8vc"
-              streamType="on-demand"
-              autoPlay="muted"
-              loop
-              muted
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              className="w-full h-full object-cover [&_media-control-bar]:hidden"
-            />
-          </div>
-
-          {/* Left fade to blend with white content panel */}
-          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent" />
-
-          {/* Bottom caption tag */}
-          <div className="absolute bottom-6 left-6">
-            <div className="inline-block bg-white/90 backdrop-blur-sm px-4 py-2 border-l-2 border-[#e85d04]">
-              <p className="text-[11px] font-bold text-gray-600 uppercase tracking-[0.2em]">
-                Tractors · Harvesters · Tillage Equipment
-              </p>
+              <div className="absolute bottom-5 left-5">
+                <div className="rounded-full border border-white/80 bg-white/92 px-5 py-3 shadow-lg backdrop-blur">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-600">
+                    {copy.mediaCaption}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
