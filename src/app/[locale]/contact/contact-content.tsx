@@ -46,10 +46,17 @@ export default function ContactContent() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error('send_failed');
+      const payload = await res.json().catch(() => null);
+      if (!res.ok) {
+        throw new Error(payload?.error || 'send_failed');
+      }
       setSubmitted(true);
-    } catch {
-      setError('Failed to send. Please email us directly at fulibearing@163.com');
+    } catch (err) {
+      setError(
+        err instanceof Error && err.message !== 'send_failed'
+          ? err.message
+          : 'Failed to send. Please email us directly at fulibearing@163.com'
+      );
     } finally {
       setLoading(false);
     }

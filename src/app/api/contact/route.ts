@@ -18,8 +18,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Name and email are required.' }, { status: 400 });
   }
 
-  // 存到 Supabase
-  await supabase.from('inquiries').insert({ name, email, company, phone, product, quantity, message });
+  const { error: insertError } = await supabase
+    .from('inquiries')
+    .insert({ name, email, company, phone, product, quantity, message });
+
+  if (insertError) {
+    console.error('Supabase insert error:', insertError);
+    return NextResponse.json({ error: 'Failed to save inquiry' }, { status: 500 });
+  }
 
   const subject = `[Bearing Inquiry] ${company ? company + ' — ' : ''}${name}`;
 
@@ -37,17 +43,20 @@ export async function POST(req: NextRequest) {
     <p style="margin-top:16px;color:#888;font-size:12px;">Sent via fuli-bearing-website.vercel.app</p>
   `;
 
-  const { error } = await resend.emails.send({
-    from: 'FULI Website <onboarding@resend.dev>',
-    to: TO_EMAILS,
-    replyTo: email,
-    subject,
-    html,
-  });
+  try {
+    const { error } = await resend.emails.send({
+      from: 'FULI Website <onboarding@resend.dev>',
+      to: TO_EMAILS,
+      replyTo: email,
+      subject,
+      html,
+    });
 
-  if (error) {
-    console.error('[contact] resend error:', error);
-    return NextResponse.json({ error: 'Failed to send email.' }, { status: 500 });
+    if (error) {
+      console.error('[contact] resend error:', error);
+    }
+  } catch (error) {
+    console.error('[contact] resend exception:', error);
   }
 
   return NextResponse.json({ ok: true });
